@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Janu ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family:Arial,sans-serif;
+color:white;
+background:linear-gradient(135deg,#16000d,#68003d,#ff2f92);
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:450px;
+}
+
+h1{
+font-size:40px;
+line-height:1.2;
+}
+
+.subtitle{
+font-size:18px;
+margin:20px 0;
+}
+
+.photo{
+width:240px;
+height:240px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid white;
+box-shadow:0 0 35px rgba(255,255,255,.5);
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:16px 28px;
+border-radius:30px;
+background:white;
+color:#d41468;
+text-decoration:none;
+font-weight:bold;
+font-size:17px;
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);opacity:0}
+to{transform:translateY(-10vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:30%;animation-delay:1s">💕</div>
+<div class="heart" style="left:70%;animation-delay:2s">❤️</div>
+<div class="heart" style="left:90%;animation-delay:3s">💗</div>
+
+<div class="container">
+
+<h1>
+🎂 Happy Birthday<br>
+Janu ❤️
+</h1>
+
+<img src="{{ url_for('static', filename='janu.jpg') }}"
+class="photo">
+
+<div class="subtitle">
+Today is all about you, my Janu ❤️
+</div>
+
+<a href="/secret" class="button">
+💌 एक छोटा प्रश्न आहे
+</a>
+
+</div>
+
+</body>
+</html>

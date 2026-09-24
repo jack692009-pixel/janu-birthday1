@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cake Time 🎂</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family:Arial,sans-serif;
+color:white;
+background:linear-gradient(135deg,#16000d,#68003d,#ff2f92);
+padding:25px;
+}
+
+.container{
+width:100%;
+max-width:500px;
+}
+
+h1{
+font-size:32px;
+}
+
+.option{
+padding:20px;
+margin:15px 0;
+border-radius:20px;
+background:rgba(255,255,255,.12);
+border:2px solid rgba(255,255,255,.4);
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.option:hover{
+transform:scale(1.04);
+}
+
+.selected{
+background:white;
+color:#d41468;
+}
+
+button{
+margin-top:25px;
+padding:15px 30px;
+border:0;
+border-radius:30px;
+background:white;
+color:#d41468;
+font-size:17px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎂 Cake कोणता खायचा आहे तुला? ❤️</h1>
+
+<form method="POST">
+
+<div class="option" onclick="choose(this,'Mango')">
+🥭 Mango
+</div>
+
+<div class="option" onclick="choose(this,'Chocolate')">
+🍫 Chocolate
+</div>
+
+<div class="option" onclick="choose(this,'Pineapple')">
+🍍 Pineapple
+</div>
+
+<div class="option" onclick="choose(this,'Unique Flavour')">
+✨ Unique Flavour
+</div>
+
+<input type="hidden" name="cake" id="cake" required>
+
+<button type="submit">
+❤️ Finish
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+function choose(element,value){
+
+document.querySelectorAll(".option").forEach(item=>{
+item.classList.remove("selected");
+});
+
+element.classList.add("selected");
+
+document.getElementById("cake").value=value;
+}
+
+</script>
+
+</body>
+</html>

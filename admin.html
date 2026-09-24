@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Choices</title>
+
+<style>
+
+body {
+    margin: 0;
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #16000d,
+        #68003d,
+        #ff2f92
+    );
+
+    color: white;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    backdrop-filter: blur(10px);
+}
+
+.row {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.label {
+    font-weight: bold;
+    color: #ffd1e8;
+}
+
+.empty {
+    text-align: center;
+    font-size: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+❤️ Janu's Birthday Choices ❤️
+</h1>
+
+
+{% if choices %}
+
+{% for choice in choices %}
+
+<div class="card">
+
+<div class="row">
+<span class="label">Response:</span>
+{{ choice["id"] }}
+</div>
+
+<div class="row">
+<span class="label">Secret Answer:</span>
+{{ choice["secret_answer"] }}
+</div>
+
+<div class="row">
+<span class="label">Place:</span>
+{{ choice["place"] }}
+</div>
+
+<div class="row">
+<span class="label">Breakfast:</span>
+{{ choice["breakfast"] }}
+</div>
+
+<div class="row">
+<span class="label">Afternoon:</span>
+{{ choice["afternoon"] }}
+</div>
+
+<div class="row">
+<span class="label">Cake:</span>
+{{ choice["cake"] }}
+</div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="empty">
+अजून कोणतीही choice आलेली नाही ❤️
+</div>
+
+{% endif %}
+
+
+</div>
+
+</body>
+
+</html>

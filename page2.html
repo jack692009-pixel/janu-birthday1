@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Where Should We Go? ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+min-height:100vh;
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+background:linear-gradient(135deg,#16000d,#68003d,#ff2f92);
+padding:40px 20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+}
+
+h1{
+font-size:32px;
+}
+
+.option{
+width:100%;
+margin:15px 0;
+padding:20px;
+border-radius:20px;
+border:2px solid rgba(255,255,255,.4);
+background:rgba(255,255,255,.12);
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.option:hover{
+transform:scale(1.04);
+}
+
+.selected{
+background:white;
+color:#d41468;
+}
+
+button{
+margin-top:25px;
+padding:15px 30px;
+border:0;
+border-radius:30px;
+background:white;
+color:#d41468;
+font-size:17px;
+font-weight:bold;
+}
+
+.note{
+font-size:12px;
+opacity:.7;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>कुठे फिरायला जायचं? ❤️</h1>
+
+<p>तुझी choice कर Janu 🥰</p>
+
+<form method="POST">
+
+<div class="option" onclick="select(this,'Mall')">
+🛍️ Mall
+</div>
+
+<div class="option" onclick="select(this,'Games Mall')">
+🎮 Games Mall
+</div>
+
+<div class="option" onclick="select(this,'Movie')">
+🎬 Movie
+</div>
+
+<div class="option" onclick="select(this,'Village')">
+🌳 Village
+</div>
+
+<input type="hidden" name="place" id="place" required>
+
+<button type="submit">
+पुढे जाऊया ❤️
+</button>
+
+</form>
+
+<div class="note">
+Your choice will be saved so I can plan our day ❤️
+</div>
+
+</div>
+
+<script>
+function select(element,value){
+
+document.querySelectorAll(".option").forEach(item=>{
+item.classList.remove("selected");
+});
+
+element.classList.add("selected");
+document.getElementById("place").value=value;
+}
+</script>
+
+</body>
+</html>

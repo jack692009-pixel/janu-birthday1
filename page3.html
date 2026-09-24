@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Let's Eat ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+min-height:100vh;
+font-family:Arial,sans-serif;
+color:white;
+background:linear-gradient(135deg,#16000d,#68003d,#ff2f92);
+padding:35px 20px;
+text-align:center;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+}
+
+h1{
+font-size:34px;
+}
+
+h2{
+margin-top:35px;
+}
+
+.option{
+padding:17px;
+margin:12px 0;
+border-radius:18px;
+background:rgba(255,255,255,.12);
+border:2px solid rgba(255,255,255,.3);
+cursor:pointer;
+font-size:19px;
+}
+
+.selected{
+background:white;
+color:#d41468;
+}
+
+button{
+margin-top:30px;
+padding:15px 30px;
+border:0;
+border-radius:30px;
+background:white;
+color:#d41468;
+font-weight:bold;
+font-size:17px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🍴 Eating Time ❤️</h1>
+
+<h2>🌅 Morning Breakfast</h2>
+
+<div class="option" onclick="chooseBreakfast(this,'Medu Vada')">
+🍩 Medu Vada
+</div>
+
+<div class="option" onclick="chooseBreakfast(this,'Idli')">
+🍚 Idli
+</div>
+
+<div class="option" onclick="chooseBreakfast(this,'Vada Pav')">
+🌭 Vada Pav
+</div>
+
+<div class="option" onclick="chooseBreakfast(this,'Samosa Pav')">
+🥟 Samosa Pav
+</div>
+
+<h2>☀️ Afternoon</h2>
+
+<div class="option" onclick="chooseAfternoon(this,'Chinese')">
+🥡 Chinese
+</div>
+
+<div class="option" onclick="chooseAfternoon(this,'Thali')">
+🍛 Thali
+</div>
+
+<div class="option" onclick="chooseAfternoon(this,'Pizza')">
+🍕 Pizza
+</div>
+
+<div class="option" onclick="chooseAfternoon(this,'Burger')">
+🍔 Burger
+</div>
+
+<form method="POST">
+
+<input type="hidden" name="breakfast" id="breakfast" required>
+<input type="hidden" name="afternoon" id="afternoon" required>
+
+<button type="submit">
+Cake कडे जाऊया 🎂
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+function chooseBreakfast(element,value){
+
+document.querySelectorAll(".option")
+.forEach((item,index)=>{
+if(index<4) item.classList.remove("selected");
+});
+
+element.classList.add("selected");
+
+document.getElementById("breakfast").value=value;
+}
+
+
+function chooseAfternoon(element,value){
+
+document.querySelectorAll(".option")
+.forEach((item,index)=>{
+if(index>=4) item.classList.remove("selected");
+});
+
+element.classList.add("selected");
+
+document.getElementById("afternoon").value=value;
+}
+
+</script>
+
+</body>
+</html>
